@@ -10,6 +10,8 @@
     "embed": "node createEmbeddings.mjs"
   },
   "dependencies": {
+    "@langchain/mongodb": "^0.0.1",
+    "@langchain/openai": "^0.0.28",
     "ai": "2.2.14",
     "dotenv": "^16.3.1",
     "langchain": "^0.0.129",

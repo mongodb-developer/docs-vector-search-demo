@@ -1,5 +1,5 @@
-import { OpenAIEmbeddings } from "langchain/embeddings/openai";
-import { MongoDBAtlasVectorSearch } from "langchain/vectorstores/mongodb_atlas";
+import { OpenAIEmbeddings } from "@langchain/openai";
+import { MongoDBAtlasVectorSearch } from "@langchain/mongodb";
 import mongoClientPromise from '@/app/lib/mongodb';
 
 export async function POST(req: Request) {
@@ -12,11 +12,10 @@ export async function POST(req: Request) {
 
   const vectorStore = new MongoDBAtlasVectorSearch(
     new OpenAIEmbeddings({
-      modelName: 'text-embedding-ada-002',
       stripNewLines: true,
     }), {
     collection,
-    indexName: "default",
+    indexName: "vector_index",
     textKey: "text", 
     embeddingKey: "embedding",
   });
