@@ -1,7 +1,7 @@
 import { MongoClient } from "mongodb";
 
 const uri = process.env.MONGODB_ATLAS_URI as string; // your mongodb connection string
-const options = {};
+const options = {appName: 'devrel.workshop.javascript'};
 
 let client;
 let mongoClientPromise: Promise<any>;
