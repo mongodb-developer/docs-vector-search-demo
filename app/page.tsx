@@ -11,7 +11,7 @@ export default function Chat() {
       {messages.length > 0
         ? messages.map((m) => (
             <div key={m.id} className="whitespace-pre-wrap">
-              {m.role === "user" ? "User: " : "AI: "}
+              <b>{m.role === "user" ? "User: " : "AI: "}</b>
               <ReactMarkdown>{m.content}</ReactMarkdown>
             </div>
           ))
